@@ -62,10 +62,10 @@ jobs:
   build:
 
     runs-on: windows-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.8", "3.9.13", "3.10"]
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         python-version: ["3.8", "3.9.13", "3.10"]
 
     steps:
     - uses: actions/checkout@v3
