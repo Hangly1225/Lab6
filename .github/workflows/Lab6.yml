@@ -86,7 +86,7 @@ jobs:
     
     - name: Create an .exe file
       run: |
-        pyinstaller --onefile main.py
+        pyinstaller --onefile cacl.py
         
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
