@@ -23,4 +23,5 @@ assert calc.simple_calculator("sum([2,3])") == 5, "should support built-in funct
 assert calc.simple_calculator("0 or 0") == 0, "should support boolean algebra: answer is 0"
 assert calc.simple_calculator("1 and 0") == 0, "should support boolean algebra: answer is 0"
 assert calc.simple_calculator("1 and 0 or 0") == 0, \
+"should support boolean algebra (priorities): answer is 0"
 print('All tests passed!')

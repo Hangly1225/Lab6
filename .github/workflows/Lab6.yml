@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Lab6 CI/CD
 
 # Controls when the workflow will run
 on:
@@ -15,6 +15,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+      - uses: actions/checkout@v3
+
+      - name: Check out unittest
+        run: python Unittest_Lab6.py
+        
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -23,14 +32,20 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
+      - uses: actions/checkout@v2
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: compile to bytecode
+        run: python -m py_compile calc.py > calc.pyc
+      - name: setup compiler
+        run: pip install pyinstaller
+      - name: compile to package
+        run: pyinstaller calc.py  --noconfirm --onefile --console
+      - name: setup git config
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git config user.name "Hang Ly"
+          git config user.email "hanglyu2002@gmail.com" 
+    # commit files
+      - name: Commit files
+        run: |
+            git commit -a -m 'Changes pushed by GitHub Actions' || true
+            git push origin master
