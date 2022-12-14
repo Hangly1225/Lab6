@@ -47,7 +47,7 @@ jobs:
     # commit files
       - name: Commit files
         run: |
-            git add Unitest_Lab6.py
-            git add Lab6.py
+            git add test.py
+            git add calc.py
             git commit -a -m 'Changes pushed by GitHub Actions' || true
             git push origin master
