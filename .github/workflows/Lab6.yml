@@ -50,7 +50,7 @@
 #             git commit -a -m 'Changes pushed by GitHub Actions' || true
 #             git push origin master
 
-name: Python package
+name: Lab6 CI/CD
 
 on:
   push:
