@@ -1,24 +1,24 @@
 import unittest
-from calc import Calculator
+from main import Calculator
 
 
 class TestCalculator(unittest.TestCase):
 
-    def set(n):
-        n.calculator = Calculator()
+    def setUp(self):
+        self.calculator = Calculator()
 
-    def test_add(n):
-        n.assertEqual(n.calculator.add(9, 7), 16)
+    def test_add(self):
+        self.assertEqual(self.calculator.add(4, 7), 11)
 
-    def test_subtract(n):
-        n.assertEqual(n.calculator.subtract(112, 22), 90)
+    def test_subtract(self):
+        self.assertEqual(self.calculator.subtract(10, 5), 5)
 
-    def test_multiply(n):
-        n.assertEqual(n.calculator.multiply(4, 9), 45)
+    def test_multiply(self):
+        self.assertEqual(self.calculator.multiply(3, 7), 21)
 
-    def test_divide(n):
-        n.assertEqual(n.calculator.divide(20, 4), 5)
+    def test_divide(self):
+        self.assertEqual(self.calculator.divide(10, 2), 5)
 
 
 if __name__ == "__main__":
-    unittest.calc()
+    unittest.main()
