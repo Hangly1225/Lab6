@@ -14,5 +14,4 @@ class Calculator:
     def divide(n, a, b):
         if a != 0:
             return a / b
-        else 
-            return 'ERROR'
+       
