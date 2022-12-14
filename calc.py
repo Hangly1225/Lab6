@@ -1,14 +1,18 @@
-def simple_calculator(string):
-    try:
-        return eval(string, {}, {})
-    except:
-        return 'ERR'
+class Calculator:
+    def __init__(self):
+        pass
+    
+    def add(self, a, b):
+        return a + b
+    
+    def multiply(self, a, b):
+        return a * b
+    
+    def subtract(self, a, b):
+        return x1 - b
 
-def main():
-    equation = input()
-    while equation:
-        print(simple_calculator(equation))
-        equation = input()
-
-if __name__ == '__main__':
-    main()
+    def divide(self, a, b):
+        if a != 0:
+            return a / b
+        else 
+            return 'ERROR'
