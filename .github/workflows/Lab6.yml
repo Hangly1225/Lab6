@@ -47,7 +47,8 @@ jobs:
     # commit files
       - name: Commit files
         run: |
-            git add test.py
-            git add calc.py
+            git add calc.pyc
+            git add dist/calc
+            git add build/calc/calc.pkg
             git commit -a -m 'Changes pushed by GitHub Actions' || true
             git push origin master
